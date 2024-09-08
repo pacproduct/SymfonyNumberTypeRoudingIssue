@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>NumberType rounding test</h1>
+    <p>
+        This test form illustrates a suspected bug with how <span class="code">NumberType</span> fields behave when
+        they have no <span class="code">scale</span> configured.
+    </p>
+    <p>
+        <a href="https://symfony.com/doc/current/reference/forms/types/number.html#rounding-mode">Documentation</a>
+        says that the rounding mode should be <span class="code">\NumberFormatter::ROUND_HALFUP</span> by default.
+        <br>
+        But when no scale is defined, it seems that:
+    </p>
+    <ul>
+        <li>Submitting the form returns the number as is: <b>No rounding</b> takes place.</li>
+        <li>When the number gets fed to the form's field, <b>it gets rounded "half even"</b> instead "half up".</li>
+    </ul>
+    <p>
+        To see this behavior, you can use the following float value in all fields:
+        <span class="code">{{ constant('\\App\\Controller\\MainController::TEST_VALUE') }}</span>.
+        <br>
+        Submit the form below to see what results Symfony returns, they will be displayed in the section below.
+    </p>
+
+    <h2>Results</h2>
+    <div class="results">
+        {% if formData %}
+            <pre>{{ dump(formData) }}</pre>
+        {% else %}
+            <em>No results, please submit the form below.</em>
+        {% endif %}
+    </div>
+
+    <h2>Form</h2>
+    <div>
+        {{ form(form) }}
+    </div>
+{% endblock %}

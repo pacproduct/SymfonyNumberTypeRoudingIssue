@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}NumberType rounding test{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+            <style>
+                h1, h2 { margin-bottom: 0;}
+                div, p { padding: .2em; }
+                div.help-text {
+                    color: grey;
+                    padding-left: 0;
+                    padding-top: .2em;
+                }
+                div.results { border: solid 1px grey; }
+                label { display: block; }
+                .code {
+                    background-color: lightgrey;
+                    font-family: monospace;
+                    padding: .1em;
+                }
+            </style>
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
