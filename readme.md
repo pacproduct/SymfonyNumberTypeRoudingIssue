@@ -4,6 +4,8 @@ This repo is a minimal Symfony 7 application showing what the default rounding m
 no scale is defined. There is a suspected bug as it does not behave like what the
 [documentation](https://symfony.com/doc/current/reference/forms/types/number.html#rounding-mode) advertises.
 
+Related issue ticket: [symfony/symfony#58204](https://github.com/symfony/symfony/issues/58204)
+
 ## How to run it
 
 You need `git`, `composer` and the Symfony local web server `symfony`.
