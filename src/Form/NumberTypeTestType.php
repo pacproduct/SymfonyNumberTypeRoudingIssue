@@ -22,7 +22,7 @@ class NumberTypeTestType extends AbstractType
                         'placeholder' => MainController::TEST_VALUE,
                     ),
                     'required' => false,
-                    'help' => 'Here, the source number is not rounded "half up": it is rounded "half even".',
+                    'help' => 'Behavior KO: the source number is not rounded "half up": it is rounded "half even".',
                 ]
             )
             ->add(
@@ -35,7 +35,7 @@ class NumberTypeTestType extends AbstractType
                     ),
                     'rounding_mode' => \NumberFormatter::ROUND_HALFUP,
                     'required' => false,
-                    'help' => 'Here, the source number is not rounded "half up": it is rounded "half even".',
+                    'help' => 'Behavior KO: the source number is not rounded "half up": it is rounded "half even".',
                 ]
             )
             ->add(
@@ -48,7 +48,7 @@ class NumberTypeTestType extends AbstractType
                     ),
                     'scale' => 3,
                     'required' => false,
-                    'help' => 'Here, the source number is rounded "half up". Although, the number of decimals is now enforced to 3 in the field (i.e. if you input "1.2", the form will display "1.200").',
+                    'help' => 'Behavior OK: the source number is rounded "half up". Although, the number of decimals is now enforced to 3 in the field (i.e. if you input "1.2", the form will display "1.200").',
                 ]
             )
         ;
